@@ -1,6 +1,6 @@
 #!/bin/bash
 function openvpn_is_dead() {
-        ping -n 8.8.8.8 -c 1 -w 3 >/dev/null 2>&1 && ifconfig tun0 >/dev/null 2>&1
+        ping -n 8.8.8.8 -c 1 -w 3 >/dev/null 2>&1 && ip addr show dev tun0 >/dev/null 2>&1
         r=$((! $? ))
         return $r
 }
