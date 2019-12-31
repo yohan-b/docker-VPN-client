@@ -11,7 +11,7 @@ function stop_openvpn() {
         sleep 1
 }
 function start_openvpn {
-        openvpn --daemon --config /etc/openvpn/openvpn.conf
+        openvpn --config /etc/openvpn/openvpn.conf &
 }
 # stop service and clean up here
 function shut_down() {
